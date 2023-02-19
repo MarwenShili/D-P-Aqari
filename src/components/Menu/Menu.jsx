@@ -1,15 +1,14 @@
 import { Avatar } from "@mui/material";
 import useWindowSize from "../../hooks/useWindowSize";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import * as React from "react";
-import { Menu, MenuItem, ListItemIcon } from "@mui/material";
+import { Menu, MenuItem } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../../data/slices/authSlice";
 
 const MenuHeader = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.auth);
   const { width } = useWindowSize();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -44,9 +43,6 @@ const MenuHeader = () => {
           anchorEl={anchorEl}
           open={open}
           onClose={handleClose}
-          // MenuListProps={{
-          //   "aria-labelledby": "basic-button",
-          // }}
         >
           <MenuItem
             // className="menu_item"
@@ -59,22 +55,6 @@ const MenuHeader = () => {
             Profile
           </MenuItem>
 
-          <MenuItem
-            onClick={() => {
-              handleClose();
-              navigate("/library");
-            }}
-          >
-            Favourite
-          </MenuItem>
-          <MenuItem
-            onClick={() => {
-              handleClose();
-              navigate("/wallet");
-            }}
-          >
-            History
-          </MenuItem>
           <MenuItem className="logout_item" onClick={() => dispatch(logout())}>
             Logout
           </MenuItem>

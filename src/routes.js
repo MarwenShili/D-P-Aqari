@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ModalsProvider from "./components/ModalsProvider";
 import MainLayout from "./layouts/MainLayout";
 import Progress from "./components/Progress/Progress";

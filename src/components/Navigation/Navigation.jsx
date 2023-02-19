@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { ReactComponent as HomeIcon } from "../../assets/icons/home.svg";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { closeSidebar } from "../../data/slices/settingsSlice";
 
 const NavigationLink = ({ icon = null, route = "/", children }) => {
