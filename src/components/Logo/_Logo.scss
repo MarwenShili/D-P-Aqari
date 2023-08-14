@@ -1,0 +1,15 @@
+.img_logo {
+  object-fit: cover;
+  width: 174px;
+  height: 55px;
+  @media only screen and (max-width: 1089px) {
+    width: 150px;
+    height: 40px;
+  }
+}
+.logo_en {
+  margin-left: -35px;
+}
+.logo_ar {
+  margin-right: -35px;
+}

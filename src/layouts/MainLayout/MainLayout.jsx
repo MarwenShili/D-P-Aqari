@@ -1,21 +1,19 @@
 import { Outlet } from "react-router-dom";
-import AuthGuard from "../../components/AuthGuard";
-import Sidebar from "../../components/Sidebar";
 import Header from "../../components/Header";
 import Backdrop from "../../components/Backdrop";
+import Footer from "../../components/Footer/Footer";
 
 const MainLayout = () => {
   return (
-    // <AuthGuard>
     <div className="main_layout">
-      <Sidebar />
+      {/* <Sidebar /> */}
       <div className="main_layout__container">
         <Header />
         <Outlet />
+        <Footer />
       </div>
       <Backdrop />
     </div>
-    // </AuthGuard>
   );
 };
 

@@ -1,14 +1,33 @@
 .header {
   display: flex;
-  padding: 12px 20px;
+  padding: 12px 170px;
   width: 100%;
-  height: 68px;
-  border-bottom: 1px solid #dadada;
+  z-index: 6;
+  // height: 100px;
+  // border: 0.5px solid #e0e0e0;
   justify-content: space-between;
+  align-items: center;
+  height: 73px;
+  background: rgba(234, 244, 238, 0.7) !important;
+  backdrop-filter: blur(15px) !important;
+  @media only screen and (max-width: 1589px) {
+    padding: 12px 70px;
+  }
+  @media only screen and (max-width: 1091px) {
+    padding: 12px 30px;
+    background-color: #04c23a !important;
+    color: #ffffff;
+  }
+  @media only screen and (max-width: 700px) {
+    padding: 12px 20px;
+  }
   & > .header__group {
     display: flex;
     gap: 18px;
     align-items: center;
+    // text-align: right;
+    cursor: pointer;
+    user-select: none;
     @media only screen and (max-width: 1089px) {
       flex-grow: 1;
       justify-content: space-between;
@@ -17,12 +36,80 @@
       width: 320px;
     }
   }
-}
-.maintenance_section {
-  width: 100%;
-  background-color: #fed02a;
-  text-align: center;
-  font-weight: 500;
-  color: black;
-  padding: 3px;
+  .header__right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    @media only screen and (max-width: 1089px) {
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+    .item_header {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 32px;
+      text-transform: capitalize;
+      color: #1b1c57;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .sign_up_header {
+      cursor: pointer;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 22px;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      height: 38px;
+      background: #04c23a;
+      border-radius: 12px;
+      padding: 8px 16px;
+    }
+    .login_header {
+      cursor: pointer;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 22px;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      height: 38px;
+      background: #1b1c57;
+      border-radius: 12px;
+      padding: 8px 16px;
+    }
+  }
+  .navigation_link {
+    color: black !important;
+  }
+
+  .exit_btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header_responsive {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    direction: ltr !important;
+    .left_responsive {
+      display: flex;
+      gap: 0px;
+    }
+  }
 }

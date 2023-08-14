@@ -9,7 +9,6 @@ import { Suspense } from "react";
 
 const RoutesProvider = () => {
   const HomeView = lazy(() => import("./views/Home"));
-  const AboutView = lazy(() => import("./views/About"));
 
   return (
     <BrowserRouter>
@@ -18,7 +17,6 @@ const RoutesProvider = () => {
           {/* Users Routes */}
           <Route path="/" element={<MainLayout />}>
             <Route index element={<HomeView />} />
-            <Route path="about" element={<AboutView />} />
           </Route>
           {/* Uncreated Routes */}
           <Route path="*" element={<NotFoundView />} />

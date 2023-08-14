@@ -2,6 +2,8 @@ import { createSlice, current } from "@reduxjs/toolkit";
 
 const initialState = {
   isSidebarOpened: false,
+  isFilterMenuOpened: false,
+  direction: "ltr",
 };
 
 export const settingsSlice = createSlice({
@@ -17,10 +19,29 @@ export const settingsSlice = createSlice({
     closeSidebar: (state) => {
       state.isSidebarOpened = false;
     },
+    setLang: (state, action) => {
+      state.direction = action.payload;
+    },
+    toggleFilter: (state) => {
+      state.isFilterMenuOpened = !current(state).isFilterMenuOpened;
+    },
+    openFilter: (state) => {
+      state.isFilterMenuOpened = true;
+    },
+    closeFilter: (state) => {
+      state.isFilterMenuOpened = false;
+    },
   },
 });
 
-export const { toggleSidebar, openSidebar, closeSidebar } =
-  settingsSlice.actions;
+export const {
+  toggleSidebar,
+  openSidebar,
+  closeSidebar,
+  setLang,
+  toggleFilter,
+  openFilter,
+  closeFilter,
+} = settingsSlice.actions;
 
 export default settingsSlice.reducer;
