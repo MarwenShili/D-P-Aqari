@@ -1,11 +1,8 @@
-import MenuHeader from "../Menu";
-import HamburgerMenuTrigger from "../HamburgerMenuTrigger";
 import useWindowSize from "../../hooks/useWindowSize";
 import { useTranslation } from "react-i18next";
-import { logout } from "../../data/slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Logo from "../Logo/Logo";
-import { Navigate, NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import LangBtn from "../LangBtn/LangBtn";
 import enAqari from "../../assets/icons/enAqari.svg";
 import arAqari from "../../assets/icons/aqariAr.svg";
@@ -15,15 +12,9 @@ import cookies from "js-cookie";
 
 const Header = () => {
   const { width } = useWindowSize();
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+
   const { t } = useTranslation();
   const currentLanguageCode = cookies.get("i18next") || "en";
-  const { isAuthenticated, user } = useSelector((state) => state.auth);
-  const token = localStorage.getItem("aqari_token");
-
-  // console.log(token);
-  // console.log(isAuthenticated, user);
 
   return (
     <>
