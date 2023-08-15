@@ -8,7 +8,7 @@ import { lazy } from "react";
 import { Suspense } from "react";
 
 const RoutesProvider = () => {
-  const HomeView = lazy(() => import("./views/Home"));
+  const DPView = lazy(() => import("./views/DirectProfileProperty"));
 
   return (
     <BrowserRouter>
@@ -16,7 +16,7 @@ const RoutesProvider = () => {
         <Routes>
           {/* Users Routes */}
           <Route path="/" element={<MainLayout />}>
-            <Route index element={<HomeView />} />
+            <Route index element={<DPView />} />
           </Route>
           {/* Uncreated Routes */}
           <Route path="*" element={<NotFoundView />} />

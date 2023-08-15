@@ -1,0 +1,17 @@
+.specifications {
+  .title_s {
+    color: var(--dark-blue, #1b1c57);
+    font-size: 10.5px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16.5px;
+    margin-bottom: 6px;
+  }
+
+  .tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,22 @@
+.tag {
+  display: flex;
+  padding: 3px 6px;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  color: var(--dark-blue, #1b1c57);
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+  width: fit-content;
+  border-radius: 9px;
+  background: rgba(196, 196, 196, 0.5);
+  img {
+    width: 13.5px;
+    height: 13.5px;
+  }
+  .name {
+  }
+}

@@ -3,6 +3,7 @@ import exampleReducer from "./slices/exampleSlice";
 import authReducer from "./slices/authSlice";
 import { reducer as modalsReducer } from "./slices/modals";
 import settingsReducer from "./slices/settingsSlice";
+import propertyReducer from "./slices/propertySlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export const store = configureStore({
     auth: authReducer,
     modals: modalsReducer,
     settings: settingsReducer,
+    property: propertyReducer,
   },
 });
