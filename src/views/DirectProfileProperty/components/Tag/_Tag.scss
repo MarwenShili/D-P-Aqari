@@ -17,6 +17,15 @@
     width: 13.5px;
     height: 13.5px;
   }
+  .value {
+    color: var(--blue, #1d4ed8);
+    font-family: Cairo;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+  }
   .name {
   }
 }

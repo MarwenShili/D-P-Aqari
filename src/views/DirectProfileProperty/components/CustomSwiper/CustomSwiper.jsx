@@ -6,7 +6,6 @@ import { ReactComponent as DefaultLeftIcon } from "../../../../assets/icons/land
 import { ReactComponent as DefaultRightIcon } from "../../../../assets/icons/landing/right.svg";
 
 const ImagesCustomSwiper = ({ items, setPreviewImg }) => {
-  console.log(items);
   const rtl = document.body.dir === "rtl";
 
   const swiperRef = useRef();

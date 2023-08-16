@@ -8,22 +8,18 @@ import RoomsAndOthers from "./components/RoomsAndOthers/RoomsAndOthers";
 import Services from "./components/Services/Services";
 import Facilities from "./components/Facilities/Facilities";
 import Fourniture from "./components/Fourniture/Fourniture";
-import fb from "./assets/icons/fb.svg";
-import wts from "./assets/icons/whts.svg";
-import tw from "./assets/icons/tw.svg";
 import copy from "./assets/icons/copy.svg";
-import arr from "./assets/icons/arrow.svg";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Map from "./components/Map/Map";
 import ImagesCustomSwiper from "./components/CustomSwiper/CustomSwiper";
 import posIcon from "./assets/icons/pos.svg";
-import { ReactComponent as BorderIcon } from "../../assets/icons/property/mdi_paper.svg";
 import CustomSwiperDetails from "./components/CustomSwiperDetails/CustomSwiperDetails";
+import cookies from "js-cookie";
 
 const DirectProfileProperty = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const currentLanguageCode = cookies.get("i18next") || "en";
 
   const [previewImg, setPreviewImg] = useState();
   const [images, setImages] = useState();
@@ -36,11 +32,11 @@ const DirectProfileProperty = () => {
   useEffect(() => {
     dispatch(
       getProperty({
-        lang: "en",
+        lang: currentLanguageCode,
         body: { country_id: null, country_code: "IN", id: "7" },
       })
     );
-  }, []);
+  }, [currentLanguageCode]);
 
   useEffect(() => {
     setImages(data?.property?.images);
@@ -50,8 +46,6 @@ const DirectProfileProperty = () => {
 
   return (
     <div className="property_details">
-      {loading === "loading" && "Loading"}
-
       {!property ? (
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Spin />
@@ -72,10 +66,10 @@ const DirectProfileProperty = () => {
             </span>
             <p className="description">{property?.details}</p>
             <div className="items">
-              <Specifications items={property?.specifications_array} />
-              <RoomsAndOthers items={property?.specifications_array} />
-              <Services items={property?.specifications_array} />
-              <Facilities items={property?.specifications_array} />
+              <Specifications items={property?.specification_array} />
+              <RoomsAndOthers items={property?.rooms_array} />
+              <Services items={property?.services_array} />
+              <Facilities items={property?.specification_array} />
               <Fourniture items={property?.specifications_array} />
             </div>
             <div className="ref_num">
