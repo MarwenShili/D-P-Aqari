@@ -18,7 +18,6 @@ function Specifications({ items }) {
   const { t } = useTranslation();
 
   // console.log(items);
-
   return (
     <div className="specifications">
       <p className="title_s">{t("property_details.Specifications")} :</p>

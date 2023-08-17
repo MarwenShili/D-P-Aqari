@@ -4,12 +4,18 @@ import { useTranslation } from "react-i18next";
 
 function Services({ items }) {
   const { t } = useTranslation();
-  console.log(items);
+  // console.log(items);
 
   return (
     <div className="specifications">
       <p className="title_s">{t("property_details.Services")} :</p>
       <div className="tags">
+        {items?.internet_can_install && (
+          <Tag
+            title={items.internet_can_install}
+            background="rgba(255, 199, 0, 0.15)"
+          />
+        )}
         {items?.water_service && (
           <Tag
             title={items?.water_service}
@@ -25,27 +31,15 @@ function Services({ items }) {
         {items?.landline && (
           <Tag title={items?.landline} background="rgba(255, 199, 0, 0.15)" />
         )}
-        {items?.guard_service && (
+        {items?.guard_service === "yes" && (
           <Tag
-            title={items?.guard_service}
+            title={t("services.guard_services")}
             background="rgba(255, 199, 0, 0.15)"
           />
         )}
-        {items?.reception_service && (
+        {items?.reception_service === "yes" && (
           <Tag
-            title={items?.reception_service}
-            background="rgba(255, 199, 0, 0.15)"
-          />
-        )}
-        {items?.internet_dsl && (
-          <Tag
-            title={items?.internet_dsl}
-            background="rgba(255, 199, 0, 0.15)"
-          />
-        )}
-        {items?.internet_fiber && (
-          <Tag
-            title={items?.internet_fiber}
+            title={t("services.reception_services")}
             background="rgba(255, 199, 0, 0.15)"
           />
         )}

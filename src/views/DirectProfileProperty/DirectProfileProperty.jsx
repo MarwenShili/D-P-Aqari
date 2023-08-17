@@ -15,25 +15,27 @@ import ImagesCustomSwiper from "./components/CustomSwiper/CustomSwiper";
 import posIcon from "./assets/icons/pos.svg";
 import CustomSwiperDetails from "./components/CustomSwiperDetails/CustomSwiperDetails";
 import cookies from "js-cookie";
+import useWindowSize from "../../hooks/useWindowSize";
+import MobileTab from "./components/MobileTab/MobileTab";
 
 const DirectProfileProperty = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const currentLanguageCode = cookies.get("i18next") || "en";
-
+  const { width } = useWindowSize();
   const [previewImg, setPreviewImg] = useState();
   const [images, setImages] = useState();
   const [property, setProperty] = useState();
   const [loading, setLoading] = useState();
-
   const data = useSelector((state) => state.property);
-  console.log(property);
+  const { ref_no } = useParams();
+  console.log(ref_no);
 
   useEffect(() => {
     dispatch(
       getProperty({
         lang: currentLanguageCode,
-        body: { country_id: null, country_code: "IN", id: "7" },
+        body: { country_id: null, country_code: "IN", id: ref_no },
       })
     );
   }, [currentLanguageCode]);
@@ -43,13 +45,20 @@ const DirectProfileProperty = () => {
     setProperty(data?.property);
     setLoading(data.loading);
   }, [data]);
-
+  if (loading === "loading") {
+    return (
+      <div className="spin_page">
+        <Spin />
+      </div>
+    );
+  }
+  if (!property) {
+    return <div className="spin_page">No Data</div>;
+  }
   return (
     <div className="property_details">
       {!property ? (
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <Spin />
-        </div>
+        <></>
       ) : (
         <div className="content">
           <div className="left">
@@ -65,13 +74,17 @@ const DirectProfileProperty = () => {
                 property?.area}
             </span>
             <p className="description">{property?.details}</p>
-            <div className="items">
-              <Specifications items={property?.specification_array} />
-              <RoomsAndOthers items={property?.rooms_array} />
-              <Services items={property?.services_array} />
-              <Facilities items={property?.specification_array} />
-              <Fourniture items={property?.specifications_array} />
-            </div>
+            {width > 900 ? (
+              <div className="items">
+                <Specifications items={property?.specification_array} />
+                <RoomsAndOthers items={property?.rooms_array} />
+                <Services items={property?.services_array} />
+                <Facilities items={property?.specification_facilities_array} />
+                <Fourniture items={property?.furniture_array} />
+              </div>
+            ) : (
+              <MobileTab property={property} />
+            )}
             <div className="ref_num">
               <p className="title_ref">
                 {t("property_details.Reference_number")} :

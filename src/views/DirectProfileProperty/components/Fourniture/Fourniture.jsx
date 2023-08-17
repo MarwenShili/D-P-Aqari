@@ -13,58 +13,51 @@ function Fourniture({ items }) {
     <div className="specifications">
       <p className="title_s">{t("property_details.Fourniture")} :</p>
       <div className="tags">
-        {items?.coffee_machine && (
+        {+items?.coffee_machine > 0 && (
           <Tag
-            title="Coffe machine"
+            title={t("furniture.coffee_machine")}
             background="var(--light-dark, #626687)"
             color="#fff"
           />
         )}
-        {items?.microwave_heating_food && (
+        {+items?.microwave_heating_food > 0 && (
           <Tag
-            title="microwave"
+            title={t("furniture.microwave_heating_food")}
             background="var(--light-dark, #626687)"
             color="#fff"
           />
         )}
-        {items?.oven && (
+        {+items?.oven > 0 && (
           <Tag
-            title="Oven"
+            title={t("furniture.oven")}
             background="var(--light-dark, #626687)"
             color="#fff"
           />
         )}
-        {items?.refrigerator && (
+        {+items?.refrigerator > 0 && (
           <Tag
-            title="Refrigerator"
+            title={`${items?.refrigerator} ${t(`furniture.refrigerator`)}`}
             background="var(--light-dark, #626687)"
             color="#fff"
           />
         )}
-        {items?.dishwasher && (
+        {+items?.dishwasher > 0 && (
           <Tag
-            title="Dishwasher"
+            title={t("furniture.dishwasher")}
             background="var(--light-dark, #626687)"
             color="#fff"
           />
         )}
-        {items?.washing_machine && (
+        {+items?.washing_machine > 0 && (
           <Tag
-            title="Washing Machine"
+            title={t("furniture.washing_machine")}
             background="var(--light-dark, #626687)"
             color="#fff"
           />
         )}
-        {items?.iron && (
+        {+items?.iron > 0 && (
           <Tag
-            title="Iron"
-            background="var(--light-dark, #626687)"
-            color="#fff"
-          />
-        )}
-        {items?.furnished_type && (
-          <Tag
-            title={items?.furnished_type}
+            title={t("furniture.iron")}
             background="var(--light-dark, #626687)"
             color="#fff"
           />

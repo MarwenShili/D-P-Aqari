@@ -498,7 +498,9 @@
     "reconditioned": "reconditioned",
     "shell_unfinished": "shell & unfinished",
     "built_flats": "Built Flats",
-    "built_land": "Built Land"
+    "built_land": "Built Land",
+    "commercial": "Commercial",
+    "residential": "residential"
   },
   "rooms": {
     "backyard": "M² back yard",
@@ -523,5 +525,30 @@
     "storeroom": "store room",
     "swimming_pool": "swimming pool",
     "tent": "tent"
+  },
+  "services": {
+    "guard_services": "guard services",
+    "reception_services": "reception services"
+  },
+  "facilities": {
+    "installed_kitchen": "installed kitchen",
+    "installed_cabinet": "installed cabinet",
+    "Center_AC": "Center AC",
+    "Split_AC": "Split AC",
+    "Window_AC": "Window AC",
+    "Desert_AC": "Desert AC",
+    "Wood_Stove": "Wood Stove",
+    "Ornamental_Trees": "Ornamental Trees",
+    "Fruitful_Trees": "Fruitful Trees",
+    "Palm": "Palm"
+  },
+  "furniture": {
+    "coffee_machine": "coffee machine",
+    "dishwasher": "dishwasher",
+    "iron": "iron",
+    "microwave_heating_food": "microwave",
+    "oven": "oven",
+    "refrigerator": "refrigerator",
+    "washing_machine": "washing machine"
   }
 }

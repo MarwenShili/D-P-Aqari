@@ -1,7 +1,12 @@
-import React, { useMemo, useState } from 'react';
-import { GoogleMap, useLoadScript, MarkerF, InfoWindowF } from '@react-google-maps/api';
-import { Spin } from 'antd';
-import { ReactComponent as Info1Icon } from '../../../../assets/images/Favorites/info1.svg';
+import React, { useMemo, useState } from "react";
+import {
+  GoogleMap,
+  useLoadScript,
+  MarkerF,
+  InfoWindowF,
+} from "@react-google-maps/api";
+import { Spin } from "antd";
+import { ReactComponent as Info1Icon } from "../../../../assets/images/Favorites/info1.svg";
 
 const Map = ({ property }) => {
   const [selectedPlace, setSelectedPlace] = useState(false);
@@ -11,14 +16,16 @@ const Map = ({ property }) => {
   });
 
   const containerStyle = {
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
   };
 
   const center = useMemo(
     () => ({
-      lat: Number(property?.lat_long?.split(',')[0].trim()) || 35.83426185090107,
-      lng: Number(property?.lat_long?.split(',')[1].trim()) || 10.607890187419523,
+      lat:
+        Number(property?.lat_long?.split(",")[0].trim()) || 35.83426185090107,
+      lng:
+        Number(property?.lat_long?.split(",")[1].trim()) || 10.607890187419523,
     }),
     []
   );
@@ -26,12 +33,12 @@ const Map = ({ property }) => {
   if (!isLoaded) return <Spin />;
 
   return (
-    <div style={{ height: '275px', width: '100%', marginTop: '12px' }}>
+    <div style={{ height: "275px", width: "100%", marginTop: "12px" }}>
       <GoogleMap zoom={12} center={center} mapContainerStyle={containerStyle}>
         <MarkerF
           position={{
-            lat: Number(property?.lat_long?.split(',')[0].trim()),
-            lng: Number(property?.lat_long?.split(',')[1].trim()),
+            lat: Number(property?.lat_long?.split(",")[0].trim()),
+            lng: Number(property?.lat_long?.split(",")[1].trim()),
           }}
           onClick={() => setSelectedPlace(!selectedPlace)}
         />
@@ -39,8 +46,8 @@ const Map = ({ property }) => {
         {selectedPlace && (
           <InfoWindowF
             position={{
-              lat: Number(property?.lat_long?.split(',')[0].trim()),
-              lng: Number(property?.lat_long?.split(',')[1].trim()),
+              lat: Number(property?.lat_long?.split(",")[0].trim()),
+              lng: Number(property?.lat_long?.split(",")[1].trim()),
             }}
             zIndex={1}
             options={{
@@ -51,15 +58,17 @@ const Map = ({ property }) => {
             }}
             onCloseClick={() => setSelectedPlace(undefined)}
           >
-            <div className='map-info-window-content'>
-              <img src={property?.images[0]} alt='placeimage' />
+            <div className="map-info-window-content">
+              <img src={property?.images[0]} alt="placeimage" />
               <div>
-                <p className='title'>{property?.name}</p>
-                <p className='subtitle'>
-                  {property?.price?.daily?.price} RS{' '}
-                  <span>{property?.price?.daily?.price_per_meter} RS/Meter</span>
+                <p className="title">{property?.name}</p>
+                <p className="subtitle">
+                  {property?.price?.daily?.price} RS{" "}
+                  <span>
+                    {property?.price?.daily?.price_per_meter} RS/Meter
+                  </span>
                 </p>
-                <p className='info'>
+                <p className="info">
                   <Info1Icon /> 700 Meter
                 </p>
               </div>

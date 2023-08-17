@@ -15,7 +15,7 @@ const RoutesProvider = () => {
       <Suspense fallback={<Progress />}>
         <Routes>
           {/* Users Routes */}
-          <Route path="/" element={<MainLayout />}>
+          <Route path="/DP/:ref_no" element={<MainLayout />}>
             <Route index element={<DPView />} />
           </Route>
           {/* Uncreated Routes */}

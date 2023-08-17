@@ -13,6 +13,14 @@
   width: fit-content;
   border-radius: 9px;
   background: rgba(196, 196, 196, 0.5);
+  @media only screen and (max-width: 700px) {
+    color: var(--dark-blue, #1b1c57);
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+  }
   img {
     width: 13.5px;
     height: 13.5px;

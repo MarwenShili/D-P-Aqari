@@ -343,7 +343,8 @@
     "reconditioned": "مجدد",
     "shell_unfinished": "غير مكتمل",
     "built_flats": "شقق مبنية",
-    "built_land": "أرض مبنية"
+    "built_land": "أرض مبنية",
+    "commercial": "تجاري"
   },
   "rooms": {
     "backyard": "م² حديقة خلفية",
@@ -368,5 +369,30 @@
     "storeroom": "غرفة تخزين",
     "swimming_pool": "حمام سباحة",
     "tent": "خيمة"
+  },
+  "services": {
+    "guard_services": "خدمات الحراسة",
+    "reception_services": "خدمات الاستقبال"
+  },
+  "facilities": {
+    "installed_kitchen": "مطبخ مجهز",
+    "installed_cabinet": "خزانة مثبتة",
+    "Center_AC": "تكييف مركزي",
+    "Split_AC": "تكييف مجزأ",
+    "Window_AC": "تكييف نافذة",
+    "Desert_AC": "تكييف صحراوي",
+    "Wood_Stove": "مدفأة خشبية",
+    "Ornamental_Trees": "أشجار زينة",
+    "Fruitful_Trees": "أشجار مثمرة",
+    "Palm": "نخلة"
+  },
+  "furniture": {
+    "coffee_machine": "آلة قهوة",
+    "dishwasher": "غسالة صحون",
+    "iron": "مكواة",
+    "microwave_heating_food": "ميكروويف",
+    "oven": "فرن",
+    "refrigerator": "ثلاجة",
+    "washing_machine": "غسالة ملابس"
   }
 }

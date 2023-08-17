@@ -1,58 +1,100 @@
-import './_Facilities.scss';
-import Tag from '../Tag/Tag';
-import { useTranslation } from 'react-i18next';
+import "./_Facilities.scss";
+import Tag from "../Tag/Tag";
+import { useTranslation } from "react-i18next";
 
 function Facilities({ items }) {
   const { t } = useTranslation();
 
   return (
-    <div className='specifications'>
-      <p className='title_s'>{t('property_details.Facilities')} :</p>
-      <div className='tags'>
-        {items?.central_air_conditioner && (
+    <div className="specifications">
+      <p className="title_s">{t("property_details.Facilities")} :</p>
+      <div className="tags">
+        {+items?.central_air_conditioner > 0 && (
           <Tag
-            title={`${items?.central_air_conditioner} Center AC`}
-            background='var(--light-green, #EAF4EE)'
+            title={t("facilities.Center_AC")}
+            background="var(--light-green, #EAF4EE)"
+            value={items?.central_air_conditioner}
+            colorValue="#04C23A"
+            color="#626687"
           />
         )}
-        {items?.split_unit && (
-          <Tag title={`${items?.split_unit} Split AC`} background='var(--light-green, #EAF4EE)' />
-        )}
-        {items?.window_air_conditioner && (
+        {+items?.split_unit > 0 && (
           <Tag
-            title={`${items?.window_air_conditioner} Window AC`}
-            background='var(--light-green, #EAF4EE)'
+            title={t("facilities.Split_AC")}
+            background="var(--light-green, #EAF4EE)"
+            value={items?.split_unit}
+            colorValue="#04C23A"
+            color="#626687"
           />
         )}
-        {items?.desert_cooler && (
+        {+items?.window_air_conditioner > 0 && (
           <Tag
-            title={`${items?.desert_cooler} Desert AC`}
-            background='var(--light-green, #EAF4EE)'
+            title={t("facilities.Window_AC")}
+            background="var(--light-green, #EAF4EE)"
+            value={items?.window_air_conditioner}
+            colorValue="#04C23A"
+            color="#626687"
           />
         )}
-        {items?.wood_stove && (
-          <Tag title={`${items?.wood_stove} Wood Stove`} background='var(--light-green, #EAF4EE)' />
-        )}
-        {items?.ornamental_trees && (
+        {+items?.desert_cooler > 0 && (
           <Tag
-            title={`${items?.ornamental_trees} ornamental trees`}
-            background='var(--light-green, #EAF4EE)'
+            title={t("facilities.Desert_AC")}
+            background="var(--light-green, #EAF4EE)"
+            value={items?.desert_cooler}
+            colorValue="#04C23A"
+            color="#626687"
           />
         )}
-        {items?.palm && (
-          <Tag title={`${items?.palm} palm`} background='var(--light-green, #EAF4EE)' />
-        )}
-        {items?.fruitful_trees && (
+        {+items?.wood_stove > 0 && (
           <Tag
-            title={`${items?.fruitful_trees} fruitful trees`}
-            background='var(--light-green, #EAF4EE)'
+            title={t("facilities.Wood_Stove")}
+            background="var(--light-green, #EAF4EE)"
+            value={items?.wood_stove}
+            colorValue="#04C23A"
+            color="#626687"
           />
         )}
-        {items?.is_kitchen_sink_installed && (
-          <Tag title={`installed kitchen`} background='var(--light-green, #EAF4EE)' />
+        {+items?.ornamental_trees > 0 && (
+          <Tag
+            title={t("facilities.Ornamental_Trees")}
+            background="var(--light-green, #EAF4EE)"
+            value={items?.ornamental_trees}
+            colorValue="#04C23A"
+            color="#626687"
+          />
         )}
+        {+items?.palm > 0 && (
+          <Tag
+            title={t("facilities.Palm")}
+            background="var(--light-green, #EAF4EE)"
+            value={items?.palm}
+            colorValue="#04C23A"
+            color="#626687"
+          />
+        )}
+        {+items?.fruitful_trees > 0 && (
+          <Tag
+            title={t("facilities.Fruitful_Trees")}
+            background="var(--light-green, #EAF4EE)"
+            value={items?.fruitful_trees}
+            colorValue="#04C23A"
+            color="#626687"
+          />
+        )}
+        {items?.is_kitchen_sink_installed === "yes" && (
+          <Tag
+            title={t(`facilities.installed_kitchen`)}
+            background="var(--light-green, #EAF4EE)"
+            color="#626687"
+          />
+        )}
+
         {items?.is_cabinet_installed && (
-          <Tag title={`installed cabinet`} background='var(--light-green, #EAF4EE)' />
+          <Tag
+            title={t(`facilities.installed_cabinet`)}
+            background="var(--light-green, #EAF4EE)"
+            color="#626687"
+          />
         )}
       </div>
     </div>

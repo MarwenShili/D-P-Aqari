@@ -6,6 +6,9 @@
     font-weight: 700;
     line-height: 16.5px;
     margin-bottom: 6px;
+    @media only screen and (max-width: 900px) {
+      display: none;
+    }
   }
 
   .tags {

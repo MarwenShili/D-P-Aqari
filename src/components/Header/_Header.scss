@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  padding: 12px 170px;
+  padding: 12px 150px;
   width: 100%;
   z-index: 6;
   // height: 100px;
@@ -11,7 +11,7 @@
   background: rgba(234, 244, 238, 0.7) !important;
   backdrop-filter: blur(15px) !important;
   @media only screen and (max-width: 1589px) {
-    padding: 12px 70px;
+    padding: 12px 100px;
   }
   @media only screen and (max-width: 1091px) {
     padding: 12px 30px;
