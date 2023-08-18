@@ -20,7 +20,7 @@ export const getProperty = createAsyncThunk(
         }
       );
       data = await response.data;
-      if ((response.status = 200)) {
+      if (response.status === 200) {
         return data;
       }
       throw new Error(response.statusText);
@@ -43,7 +43,9 @@ export const propertySlice = createSlice({
     },
     [getProperty.fulfilled]: (state, action) => {
       const { properties } = action.payload;
-      state.property = properties[0];
+      if (properties) {
+        state.property = properties[0];
+      }
       state.loading = "idle";
     },
     [getProperty.rejected]: (state, action) => {

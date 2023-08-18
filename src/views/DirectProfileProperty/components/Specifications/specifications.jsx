@@ -14,8 +14,13 @@ import I10 from "../../assets/specifications/10.svg";
 import I11 from "../../assets/specifications/11.svg";
 import I12 from "../../assets/specifications/12.svg";
 
-function Specifications({ items }) {
+function Specifications({ items, entrance }) {
   const { t } = useTranslation();
+
+  const handleDirection = (str) => {
+    let arr = str.split(",").map((el) => t(`specification.${el}`) + " ");
+    return arr;
+  };
 
   // console.log(items);
   return (
@@ -27,6 +32,13 @@ function Specifications({ items }) {
         {items?.unit_usage && (
           <Tag
             title={t(`specification.${items?.unit_usage}`)}
+            background="1b1c57"
+            icon={I11}
+          />
+        )}
+        {items?.residential_type && (
+          <Tag
+            title={t(`specification.${items?.residential_type}`)}
             background="1b1c57"
             icon={I11}
           />
@@ -87,7 +99,8 @@ function Specifications({ items }) {
         )}
         {items?.unit_direction && (
           <Tag
-            title={t(`specification.${items?.unit_direction}`)}
+            // title={t(`specification.${items?.unit_direction}`)}
+            title={handleDirection(items?.unit_direction)}
             background="1b1c57"
             icon={I6}
           />
@@ -101,8 +114,12 @@ function Specifications({ items }) {
             icon={I11}
           />
         )}
-        {items?.entrance && (
-          <Tag title={`${items?.entrance}`} background="1b1c57" icon={I12} />
+        {entrance && (
+          <Tag
+            title={t(`specification.${entrance}`)}
+            background="1b1c57"
+            icon={I12}
+          />
         )}
         {/* not required items  */}
         {+items?.total_floors > 1 && items?.total_floors && (

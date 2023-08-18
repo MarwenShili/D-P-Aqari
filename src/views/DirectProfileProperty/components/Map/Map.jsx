@@ -34,7 +34,7 @@ const Map = ({ property }) => {
 
   return (
     <div style={{ height: "275px", width: "100%", marginTop: "12px" }}>
-      <GoogleMap zoom={12} center={center} mapContainerStyle={containerStyle}>
+      <GoogleMap zoom={15} center={center} mapContainerStyle={containerStyle}>
         <MarkerF
           position={{
             lat: Number(property?.lat_long?.split(",")[0].trim()),

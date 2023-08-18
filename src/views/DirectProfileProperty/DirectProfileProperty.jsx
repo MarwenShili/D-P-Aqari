@@ -17,6 +17,7 @@ import CustomSwiperDetails from "./components/CustomSwiperDetails/CustomSwiperDe
 import cookies from "js-cookie";
 import useWindowSize from "../../hooks/useWindowSize";
 import MobileTab from "./components/MobileTab/MobileTab";
+import EmptyState from "./components/EmptyState/EmptyState";
 
 const DirectProfileProperty = () => {
   const dispatch = useDispatch();
@@ -26,10 +27,8 @@ const DirectProfileProperty = () => {
   const [previewImg, setPreviewImg] = useState();
   const [images, setImages] = useState();
   const [property, setProperty] = useState();
-  const [loading, setLoading] = useState();
   const data = useSelector((state) => state.property);
   const { ref_no } = useParams();
-  console.log(ref_no);
 
   useEffect(() => {
     dispatch(
@@ -43,9 +42,9 @@ const DirectProfileProperty = () => {
   useEffect(() => {
     setImages(data?.property?.images);
     setProperty(data?.property);
-    setLoading(data.loading);
   }, [data]);
-  if (loading === "loading") {
+
+  if (data.loading === "loading") {
     return (
       <div className="spin_page">
         <Spin />
@@ -53,8 +52,13 @@ const DirectProfileProperty = () => {
     );
   }
   if (!property) {
-    return <div className="spin_page">No Data</div>;
+    return (
+      <div className="spin_page">
+        <EmptyState />
+      </div>
+    );
   }
+
   return (
     <div className="property_details">
       {!property ? (
@@ -76,7 +80,10 @@ const DirectProfileProperty = () => {
             <p className="description">{property?.details}</p>
             {width > 900 ? (
               <div className="items">
-                <Specifications items={property?.specification_array} />
+                <Specifications
+                  items={property?.specification_array}
+                  entrance={property?.rooms_array.entrance}
+                />
                 <RoomsAndOthers items={property?.rooms_array} />
                 <Services items={property?.services_array} />
                 <Facilities items={property?.specification_facilities_array} />

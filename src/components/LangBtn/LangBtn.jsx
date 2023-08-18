@@ -13,10 +13,10 @@ function LangBtn() {
       onClick={() => {
         if (currentLanguageCode === "en") {
           i18next.changeLanguage("ar");
-          window.location.reload();
+          // window.location.reload();
         } else {
           i18next.changeLanguage("en");
-          window.location.reload();
+          // window.location.reload();
         }
       }}
     >

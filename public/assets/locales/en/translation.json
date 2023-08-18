@@ -446,7 +446,7 @@
     "Rooms_and_others": "Rooms and others",
     "Services": "Services",
     "Facilities": "Facilities",
-    "Fourniture": "Fourniture",
+    "Fourniture": "Furniture",
     "Post_Date": "Post Date",
     "share": "Share",
     "Reference_number": "Reference number",
@@ -466,12 +466,13 @@
 
     "Monthly_rent": "Monthly rent : ",
     "Payment method": "Payment method :",
-    "Monthly": "Monthly"
+    "Monthly": "Monthly",
+    "no_data": "No Property Found"
   },
   "specification": {
     "for_families": "for families",
     "for_singles": "for singles",
-    "families_singles": "families & singles",
+    "for_families_for_singles": "families & singles",
     "width": "width",
     "height": "height",
     "length": "length",
@@ -479,8 +480,8 @@
     "used_finished": "used finished",
     "new_finished": "new finished",
     "sea_view": "sea view",
-    "private_entrance": "private entrance",
-    "shared_entrance": "shared entrance",
+    "private": "private entrance",
+    "shared": "shared entrance",
     "meter_square": "square meters",
     "m": "M",
     "area": "area",
@@ -528,7 +529,17 @@
   },
   "services": {
     "guard_services": "guard services",
-    "reception_services": "reception services"
+    "reception_services": "reception services",
+    "internet_4g_free": "Internet 4g free",
+    "internet_dsl_available_by_fees": "Internet dsl available by fees",
+    "internet_fiber_free": "internet fiber free",
+    "internet_dsl_free": "internet dsl free",
+    "internet_fiber_with_cost": "internet fiber with cost",
+    "internet_dsl_with_cost": "internet dsl with cost",
+    "internet_4g_with_cost": "Internet 4g with cost",
+    "internet_fiber_can_install": "internet fiber can install",
+    "internet_4g_can_install": "internet 4g can install",
+    "internet_dsl_can_install": "internet dsl can install"
   },
   "facilities": {
     "installed_kitchen": "installed kitchen",

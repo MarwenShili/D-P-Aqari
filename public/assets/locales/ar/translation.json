@@ -311,12 +311,13 @@
 
     "Monthly_rent": "Monthly rent : ",
     "Payment method": "Payment method :",
-    "Monthly": "Monthly"
+    "Monthly": "Monthly",
+    "no_data": "لا يوجد عقارات"
   },
   "specification": {
     "for_families": "سكن عائلات",
     "for_singles": "للأفراد",
-    "families_singles": "للعائلات والأفراد",
+    "for_families_for_singles": "للعائلات والأفراد",
     "width": "عرض",
     "height": "ارتفاع",
     "length": "طول",
@@ -324,8 +325,8 @@
     "used_finished": "مستعمل ومكتمل",
     "new_finished": "جديد ومكتمل",
     "sea_view": "مطلة على البحر",
-    "private_entrance": "مدخل خاص ",
-    "shared_entrance": "مدخل مشترك",
+    "private": "مدخل خاص ",
+    "shared": "مدخل مشترك",
     "meter_square": "متر مربع",
     "m": "متر",
     "area": "المساحة",
@@ -344,7 +345,8 @@
     "shell_unfinished": "غير مكتمل",
     "built_flats": "شقق مبنية",
     "built_land": "أرض مبنية",
-    "commercial": "تجاري"
+    "commercial": "تجاري",
+    "residential": "سكني"
   },
   "rooms": {
     "backyard": "م² حديقة خلفية",
@@ -372,7 +374,17 @@
   },
   "services": {
     "guard_services": "خدمات الحراسة",
-    "reception_services": "خدمات الاستقبال"
+    "reception_services": "خدمات الاستقبال",
+    "internet_4g_free": "إنترنت 4G مجاني",
+    "internet_dsl_available_by_fees": "إنترنت DSL متاح بتكاليف",
+    "internet_fiber_free": "إنترنت الألياف مجاني",
+    "internet_dsl_free": "إنترنت DSL مجاني",
+    "internet_fiber_with_cost": "إنترنت الألياف مع تكلفة",
+    "internet_dsl_with_cost": "إنترنت DSL مع تكلفة",
+    "internet_4g_with_cost": "إنترنت 4G مع تكلفة",
+    "internet_fiber_can_install": "يمكن تركيب إنترنت الألياف",
+    "internet_4g_can_install": "يمكن تركيب إنترنت 4G",
+    "internet_dsl_can_install": "يمكن تركيب إنترنت DSL"
   },
   "facilities": {
     "installed_kitchen": "مطبخ مجهز",

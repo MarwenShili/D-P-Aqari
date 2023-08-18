@@ -4,7 +4,12 @@ import { useTranslation } from "react-i18next";
 
 function Services({ items }) {
   const { t } = useTranslation();
-  // console.log(items);
+
+  const handleInternet = (str) => {
+    if (str.length > 0) {
+      return str.split(",").map((el) => el);
+    }
+  };
 
   return (
     <div className="specifications">
@@ -42,6 +47,13 @@ function Services({ items }) {
             title={t("services.reception_services")}
             background="rgba(255, 199, 0, 0.15)"
           />
+        )}
+        {items?.internet_available && (
+          <>
+            {handleInternet(items?.internet_available).map((el, index) => (
+              <Tag title={el} background="rgba(255, 199, 0, 0.15)" />
+            ))}
+          </>
         )}
       </div>
     </div>
