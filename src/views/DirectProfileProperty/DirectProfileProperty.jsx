@@ -69,13 +69,14 @@ const DirectProfileProperty = () => {
             <p className="title">{property?.name}</p>
             <span className="position">
               <img src={posIcon} alt="" />
-              {property?.country +
-                ", " +
-                property?.state +
-                ", " +
-                property?.city +
-                ", " +
-                property?.area}
+              {
+                property?.country + ", " + property?.state
+                //   +
+                // ", " +
+                // property?.city +
+                // ", " +
+                //   property?.area
+              }
             </span>
             <p className="description">{property?.details}</p>
             {width > 900 ? (
