@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProperty } from "../../data/slices/propertySlice";
 import { useTranslation } from "react-i18next";
-import { Spin } from "antd";
+import { Image, Spin } from "antd";
 import Specifications from "./components/Specifications/specifications";
 import RoomsAndOthers from "./components/RoomsAndOthers/RoomsAndOthers";
 import Services from "./components/Services/Services";
@@ -108,13 +108,13 @@ const DirectProfileProperty = () => {
           </div>
 
           <div className="right">
-            <img
+            <Image
               src={previewImg || property?.images?.[0]}
               alt=""
               className="principal_img"
             />
 
-            <div className="slider slider-pc">
+            <div className="slider slider-pc slider_web_images">
               {property && (
                 <ImagesCustomSwiper
                   items={images}
