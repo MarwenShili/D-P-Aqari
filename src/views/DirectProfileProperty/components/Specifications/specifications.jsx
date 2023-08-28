@@ -150,11 +150,7 @@ function Specifications({ items, entrance }) {
         {items?.furnished_type &&
           items?.furnished_type != "Unfurnished" &&
           items?.furnished_type != "غير مؤثث" && (
-            <Tag
-              title={t(`specification.${items?.furnished_type}`)}
-              background="1b1c57"
-              icon={I7}
-            />
+            <Tag title={items?.furnished_type} background="1b1c57" icon={I7} />
           )}
         {items?.sea_view === "yes" && (
           <Tag
