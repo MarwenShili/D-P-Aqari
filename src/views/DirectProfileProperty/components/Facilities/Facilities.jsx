@@ -81,7 +81,7 @@ function Facilities({ items }) {
             color="#626687"
           />
         )}
-        {items?.is_kitchen_sink_installed === "yes" && (
+        {items?.is_kitchen_installed === "yes" && (
           <Tag
             title={t(`facilities.installed_kitchen`)}
             background="var(--light-green, #EAF4EE)"
@@ -89,9 +89,23 @@ function Facilities({ items }) {
           />
         )}
 
-        {items?.is_cabinet_installed && (
+        {items?.is_clothing_cabinet_installed === "yes" && (
           <Tag
             title={t(`facilities.installed_cabinet`)}
+            background="var(--light-green, #EAF4EE)"
+            color="#626687"
+          />
+        )}
+        {items?.private_elevator === "yes" && (
+          <Tag
+            title={t(`facilities.private_elevator`)}
+            background="var(--light-green, #EAF4EE)"
+            color="#626687"
+          />
+        )}
+        {items?.shared_elevator === "yes" && (
+          <Tag
+            title={t(`facilities.shared_elevator`)}
             background="var(--light-green, #EAF4EE)"
             color="#626687"
           />

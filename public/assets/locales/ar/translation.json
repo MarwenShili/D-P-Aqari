@@ -396,7 +396,9 @@
     "Wood_Stove": "مدفأة خشبية",
     "Ornamental_Trees": "أشجار زينة",
     "Fruitful_Trees": "أشجار مثمرة",
-    "Palm": "نخلة"
+    "Palm": "نخلة",
+    "private_elevator": "مصعد خاص",
+    "shared_elevator": "مصعد مشترك"
   },
   "furniture": {
     "coffee_machine": "آلة قهوة",

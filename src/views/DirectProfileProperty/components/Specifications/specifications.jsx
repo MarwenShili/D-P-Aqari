@@ -18,7 +18,7 @@ function Specifications({ items, entrance }) {
   const { t } = useTranslation();
 
   const handleDirection = (str) => {
-    let arr = str.split(",").map((el) => t(`specification.${el}`) + " ");
+    let arr = str.split(",").map((el) => el + "  ");
     return arr;
   };
 
@@ -30,18 +30,10 @@ function Specifications({ items, entrance }) {
         {/* //required items  */}
         {/* type of property */}
         {items?.unit_usage && (
-          <Tag
-            title={t(`specification.${items?.unit_usage}`)}
-            background="1b1c57"
-            icon={I11}
-          />
+          <Tag title={items?.unit_usage} background="1b1c57" icon={I11} />
         )}
         {items?.residential_type && (
-          <Tag
-            title={t(`specification.${items?.residential_type}`)}
-            background="1b1c57"
-            icon={I11}
-          />
+          <Tag title={items?.residential_type} background="1b1c57" icon={I11} />
         )}
         {items?.unit_area && (
           <Tag
@@ -114,12 +106,8 @@ function Specifications({ items, entrance }) {
             icon={I11}
           />
         )}
-        {entrance && (
-          <Tag
-            title={t(`specification.${entrance}`)}
-            background="1b1c57"
-            icon={I12}
-          />
+        {items?.entrance && (
+          <Tag title={items?.entrance} background="1b1c57" icon={I12} />
         )}
         {/* not required items  */}
         {+items?.total_floors > 1 && items?.total_floors && (
@@ -136,14 +124,18 @@ function Specifications({ items, entrance }) {
             icon={I8}
           />
         )}
-        {items?.unit_finishing != "finished" && items?.unit_finishing && (
-          <Tag
-            title={t("specification.shell_unfinished")}
-            background="1b1c57"
-            icon={I9}
-          />
-        )}
-        {items?.unit_finishing === "finished" &&
+        {items?.unit_finishing != "Finished" &&
+          items?.unit_finishing != "مكتمل" &&
+          items?.unit_finishing && (
+            <Tag
+              // title={t("specification.shell_unfinished")}
+              title={items?.building_condition}
+              background="1b1c57"
+              icon={I9}
+            />
+          )}
+        {items?.unit_finishing === "Finished" &&
+          items?.unit_finishing != "مكتمل" &&
           items?.building_first_inhabited && (
             <Tag
               title={
@@ -156,8 +148,8 @@ function Specifications({ items, entrance }) {
             />
           )}
         {items?.furnished_type &&
-          (items?.furnished_type === "Used Furnishing" ||
-            items?.furnished_type === "New Furnishing") && (
+          items?.furnished_type != "Unfurnished" &&
+          items?.furnished_type != "غير مؤثث" && (
             <Tag
               title={t(`specification.${items?.furnished_type}`)}
               background="1b1c57"

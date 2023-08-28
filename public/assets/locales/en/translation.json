@@ -551,7 +551,9 @@
     "Wood_Stove": "Wood Stove",
     "Ornamental_Trees": "Ornamental Trees",
     "Fruitful_Trees": "Fruitful Trees",
-    "Palm": "Palm"
+    "Palm": "Palm",
+    "private_elevator": "private elevator",
+    "shared_elevator": "shared elevator"
   },
   "furniture": {
     "coffee_machine": "coffee machine",

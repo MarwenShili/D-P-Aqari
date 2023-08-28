@@ -81,10 +81,7 @@ const DirectProfileProperty = () => {
             <p className="description">{property?.details}</p>
             {width > 900 ? (
               <div className="items">
-                <Specifications
-                  items={property?.specification_array}
-                  entrance={property?.rooms_array.entrance}
-                />
+                <Specifications items={property?.specification_array} />
                 <RoomsAndOthers items={property?.rooms_array} />
                 <Services items={property?.services_array} />
                 <Facilities items={property?.specification_facilities_array} />
