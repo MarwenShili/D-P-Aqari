@@ -18,6 +18,7 @@ import cookies from "js-cookie";
 import useWindowSize from "../../hooks/useWindowSize";
 import MobileTab from "./components/MobileTab/MobileTab";
 import EmptyState from "./components/EmptyState/EmptyState";
+import { copyToClipboard } from "../../helpers/CopyToClipboard";
 
 const DirectProfileProperty = () => {
   const dispatch = useDispatch();
@@ -94,7 +95,10 @@ const DirectProfileProperty = () => {
               <p className="title_ref">
                 {t("property_details.Reference_number")} :
               </p>
-              <p className="value_ref">
+              <p
+                className="value_ref"
+                onClick={() => copyToClipboard(property?.ref_id)}
+              >
                 {property?.ref_id} <img src={copy} alt="" />
               </p>
             </div>
