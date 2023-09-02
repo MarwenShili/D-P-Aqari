@@ -1,21 +1,27 @@
-import { useRef } from "react";
-import "swiper/css";
+import { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import { ReactComponent as DefaultLeftIcon } from "./Vector (16).svg";
 import { ReactComponent as DefaultRightIcon } from "./Vector (15).svg";
 import { Image } from "antd";
-
-const CustomSwiperDetails = ({ items, setPreviewImg }) => {
+const CustomSwiperDetails = ({ items, setPreviewImg, activeImg }) => {
   const rtl = document.body.dir === "rtl";
 
   const swiperRef = useRef();
 
+  useEffect(() => {
+    swiperRef.current?.on("slideChange", () => {
+      setPreviewImg(null);
+    });
+  }, [setPreviewImg]);
+
   return (
-    <>
+    <div className="slider_one_element">
       <div
         className="btn btn-left"
-        onClick={() => swiperRef.current?.slidePrev()}
+        onClick={() => {
+          setPreviewImg(null);
+          swiperRef.current?.slidePrev();
+        }}
       >
         {rtl ? <DefaultRightIcon /> : <DefaultLeftIcon />}
       </div>
@@ -29,9 +35,8 @@ const CustomSwiperDetails = ({ items, setPreviewImg }) => {
         {items?.map((el, index) => (
           <SwiperSlide key={index}>
             <Image
-              src={el}
+              src={activeImg || el}
               alt="img"
-              // onClick={() => setPreviewImg(el)}
               style={{ cursor: "pointer" }}
             />
           </SwiperSlide>
@@ -39,11 +44,14 @@ const CustomSwiperDetails = ({ items, setPreviewImg }) => {
       </Swiper>
       <div
         className="btn btn-right"
-        onClick={() => swiperRef.current?.slideNext()}
+        onClick={() => {
+          setPreviewImg(null);
+          swiperRef.current?.slideNext();
+        }}
       >
         {rtl ? <DefaultLeftIcon /> : <DefaultRightIcon />}
       </div>
-    </>
+    </div>
   );
 };
 

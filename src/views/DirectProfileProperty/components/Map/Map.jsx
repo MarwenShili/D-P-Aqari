@@ -43,7 +43,7 @@ const Map = ({ property }) => {
           onClick={() => setSelectedPlace(!selectedPlace)}
         />
 
-        {selectedPlace && (
+        {/* {selectedPlace && (
           <InfoWindowF
             position={{
               lat: Number(property?.lat_long?.split(",")[0].trim()),
@@ -74,7 +74,7 @@ const Map = ({ property }) => {
               </div>
             </div>
           </InfoWindowF>
-        )}
+        )} */}
       </GoogleMap>
     </div>
   );

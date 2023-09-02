@@ -14,7 +14,7 @@ export const getProperty = createAsyncThunk(
     let data;
     try {
       const response = await axiosInstance.post(
-        `/property_detail?lang=${lang}`,
+        `/direct_property_detail?lang=${lang}`,
         {
           ...body,
         }

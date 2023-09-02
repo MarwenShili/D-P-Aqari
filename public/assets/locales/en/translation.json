@@ -467,7 +467,8 @@
     "Monthly_rent": "Monthly rent : ",
     "Payment method": "Payment method :",
     "Monthly": "Monthly",
-    "no_data": "No Property Found"
+    "no_data": "No Property Found",
+    "no_images": "No Images Found"
   },
   "specification": {
     "for_families": "for families",
@@ -563,5 +564,9 @@
     "oven": "oven",
     "refrigerator": "refrigerator",
     "washing_machine": "washing machine"
+  },
+  "tour": {
+    "tour_text": "virtual tour",
+    "video_text": "Watch an animated video"
   }
 }

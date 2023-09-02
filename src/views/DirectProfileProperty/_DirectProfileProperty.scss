@@ -100,7 +100,7 @@
   .content {
     display: flex;
     width: 100%;
-    gap: 50px;
+    gap: 60px;
     max-width: 1400px;
 
     @media only screen and (max-width: 900px) {
@@ -160,6 +160,17 @@
         font-weight: 400;
         line-height: 18px;
         margin-bottom: 12px;
+        word-wrap: break-word;
+        max-width: 500px;
+        @media only screen and (max-width: 1135px) {
+          max-width: 400px;
+        }
+        @media only screen and (max-width: 950px) {
+          max-width: 350px;
+        }
+        @media only screen and (max-width: 900px) {
+          max-width: 100%;
+        }
       }
       .logo_section {
         display: flex;
@@ -394,7 +405,7 @@
 
       @media only screen and (max-width: 900px) {
         .slider-pc {
-          display: none;
+          // display: none;
         }
 
         .slider-mobile {
@@ -473,13 +484,25 @@
     }
   }
 }
-
+.spin_page {
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.map {
+  & > div {
+    & > div {
+      border-radius: 6px;
+    }
+  }
+}
 //mobile swiper
 
 .slider-mobile {
   margin-bottom: 20px;
   .ant-image {
-    height: 330px !important;
+    height: 360px !important;
     @media only screen and (max-width: 489px) {
       height: 200px !important;
     }
@@ -500,20 +523,6 @@
   }
 }
 
-.spin_page {
-  height: 100vh;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-.map {
-  & > div {
-    & > div {
-      border-radius: 6px;
-    }
-  }
-}
-
 //slider_web_images
 .slider_web_images {
   margin-bottom: 20px !important;
@@ -526,4 +535,47 @@
       height: 76px !important;
     }
   }
+}
+//slider_web_videos
+.slider_web_videos {
+  margin-bottom: 20px;
+  .swiper {
+    height: 76px !important;
+    .swiper-slide {
+      max-width: 200px;
+    }
+    @media only screen and (max-width: 489px) {
+      height: 76px !important;
+    }
+  }
+}
+
+//video web and responsive
+.full {
+  height: 390px;
+  margin-bottom: 20px !important;
+  @media only screen and (max-width: 900px) {
+    height: 360px !important;
+  }
+  @media only screen and (max-width: 489px) {
+    height: 200px !important;
+  }
+}
+
+//pdfs sections stytles
+
+.pdf_section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+  @media only screen and (max-width: 600px) {
+    justify-content: center;
+  }
+}
+
+.one_slider_images {
+  margin-top: -24px;
 }

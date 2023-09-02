@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Empty } from "antd";
 import { useTranslation } from "react-i18next";
 
-const EmptyState = () => {
+const EmptyState = ({ text }) => {
   const { t } = useTranslation();
 
   return (
@@ -11,7 +11,7 @@ const EmptyState = () => {
       imageStyle={{
         height: 60,
       }}
-      description={<h3>{t("property_details.no_data")}</h3>}
+      description={<h3>{text}</h3>}
     >
       {/* <Button type="primary">Create Now</Button> */}
     </Empty>

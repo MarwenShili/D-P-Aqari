@@ -19,6 +19,9 @@ import useWindowSize from "../../hooks/useWindowSize";
 import MobileTab from "./components/MobileTab/MobileTab";
 import EmptyState from "./components/EmptyState/EmptyState";
 import { copyToClipboard } from "../../helpers/CopyToClipboard";
+import { FileType } from "../../helpers/filterImages";
+import VideoComponent from "./components/VideoDemo/VideoDemo";
+import MediaEmptyState from "../../components/MediaEmptyState/MediaEmptyState";
 
 const DirectProfileProperty = () => {
   const dispatch = useDispatch();
@@ -27,6 +30,8 @@ const DirectProfileProperty = () => {
   const { width } = useWindowSize();
   const [previewImg, setPreviewImg] = useState();
   const [images, setImages] = useState();
+  const [videos, setVideos] = useState([]);
+  console.log(videos);
   const [property, setProperty] = useState();
   const data = useSelector((state) => state.property);
   const { ref_no } = useParams();
@@ -35,14 +40,23 @@ const DirectProfileProperty = () => {
     dispatch(
       getProperty({
         lang: currentLanguageCode,
-        body: { country_id: null, country_code: "IN", id: ref_no },
+        body: { country_id: null, country_code: "IN", ref_id: ref_no },
       })
     );
   }, [currentLanguageCode]);
 
   useEffect(() => {
-    setImages(data?.property?.images);
     setProperty(data?.property);
+
+    if (data?.property?.images) {
+      setImages(data?.property?.images);
+    }
+    if (data?.property?.videos) {
+      setVideos(data.property.videos);
+    }
+    if (data?.property?.url) {
+      setVideos((prevData) => [...prevData, ...data?.property.url]);
+    }
   }, [data]);
 
   if (data.loading === "loading") {
@@ -55,7 +69,7 @@ const DirectProfileProperty = () => {
   if (!property) {
     return (
       <div className="spin_page">
-        <EmptyState />
+        <EmptyState text={t("property_details.no_data")} />
       </div>
     );
   }
@@ -109,29 +123,68 @@ const DirectProfileProperty = () => {
           </div>
 
           <div className="right">
-            <Image
-              src={previewImg || property?.images?.[0]}
-              alt=""
-              className="principal_img"
-            />
-
-            <div className="slider slider-pc slider_web_images">
-              {property && (
-                <ImagesCustomSwiper
-                  items={images}
-                  setPreviewImg={setPreviewImg}
-                />
-              )}
-            </div>
-
+            {FileType(previewImg) === "mp4" ? (
+              <VideoComponent videoLink={previewImg} type="preview" />
+            ) : (
+              <>
+                {property?.images?.length === 0 || !property?.images ? (
+                  <MediaEmptyState />
+                ) : (
+                  <Image
+                    src={previewImg || property?.images?.[0]}
+                    className="principal_img"
+                    width="100%"
+                  ></Image>
+                )}
+              </>
+            )}
             <div className="slider slider-mobile">
               {property && (
-                <CustomSwiperDetails
-                  items={images}
-                  setPreviewImg={setPreviewImg}
-                />
+                <>
+                  {property?.images?.length === 0 || !property?.images ? (
+                    <></>
+                  ) : (
+                    <>
+                      {FileType(previewImg) === "img" && (
+                        <div className="one_slider_images">
+                          <CustomSwiperDetails
+                            items={images}
+                            setPreviewImg={setPreviewImg}
+                            activeImg={previewImg}
+                          />
+                        </div>
+                      )}
+                    </>
+                  )}
+                </>
               )}
             </div>
+            <div className="slider slider-pc slider_web_images">
+              {property && (
+                <>
+                  {property?.images?.length === 0 || !property?.images ? (
+                    <></>
+                  ) : (
+                    <ImagesCustomSwiper
+                      items={images}
+                      setPreviewImg={setPreviewImg}
+                    />
+                  )}
+                </>
+              )}
+            </div>
+            {videos.length > 0 && (
+              <div className="slider slider-pc slider_web_videos">
+                {property && (
+                  <ImagesCustomSwiper
+                    // items={[...property?.videos, ...property?.url]}
+                    items={videos}
+                    setPreviewImg={setPreviewImg}
+                    vr_main_image={property?.vr_main_image}
+                  />
+                )}
+              </div>
+            )}
 
             <div className="map">
               <Map property={property} />

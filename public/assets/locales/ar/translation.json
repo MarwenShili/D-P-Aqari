@@ -312,7 +312,8 @@
     "Monthly_rent": "Monthly rent : ",
     "Payment method": "Payment method :",
     "Monthly": "Monthly",
-    "no_data": "لا يوجد عقارات"
+    "no_data": "لا يوجد عقارات",
+    "no_images": "لم يتم العثور على صور"
   },
   "specification": {
     "for_families": "سكن عائلات",
@@ -408,5 +409,9 @@
     "oven": "فرن",
     "refrigerator": "ثلاجة",
     "washing_machine": "غسالة ملابس"
+  },
+  "tour": {
+    "tour_text": "جولة افتراضية",
+    "video_text": "مشاهدة فيديو متحرك"
   }
 }

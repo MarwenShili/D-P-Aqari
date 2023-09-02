@@ -1,0 +1,43 @@
+.tour {
+  height: 76px !important;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  .img_1 {
+    width: 100%;
+    height: 75px;
+    border-radius: 12px;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  .action {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+
+    .img_2 {
+      width: 55.428px !important;
+      height: 29.233px !important;
+      cursor: pointer;
+    }
+    p {
+      color: #fff;
+      text-align: center;
+      font-size: 7.683px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      user-select: none;
+      cursor: pointer !important;
+    }
+  }
+}
