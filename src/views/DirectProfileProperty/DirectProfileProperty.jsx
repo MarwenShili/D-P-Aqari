@@ -29,7 +29,7 @@ const DirectProfileProperty = () => {
   const currentLanguageCode = cookies.get("i18next") || "en";
   const { width } = useWindowSize();
   const [previewImg, setPreviewImg] = useState();
-  const [images, setImages] = useState();
+  const [images, setImages] = useState([]);
   const [videos, setVideos] = useState([]);
   console.log(videos);
   const [property, setProperty] = useState();
@@ -45,18 +45,27 @@ const DirectProfileProperty = () => {
     );
   }, [currentLanguageCode]);
 
+  //managing media
+
   useEffect(() => {
     setProperty(data?.property);
-
     if (data?.property?.images) {
       setImages(data?.property?.images);
     }
     if (data?.property?.videos) {
-      setVideos(data.property.videos);
+      setVideos((prev) => [...prev, ...data?.property?.videos]);
     }
     if (data?.property?.url) {
       setVideos((prevData) => [...prevData, ...data?.property.url]);
     }
+    //condition related to : if no images and have videos
+    if (!data?.property?.images || data?.property?.images?.length === 0) {
+      if (data?.property?.videos) {
+        setPreviewImg(data?.property.videos[0]);
+      }
+    }
+
+    //condition related to : if no images and no vr tours and  have one videos
   }, [data]);
 
   if (data.loading === "loading") {
@@ -127,7 +136,7 @@ const DirectProfileProperty = () => {
               <VideoComponent videoLink={previewImg} type="preview" />
             ) : (
               <>
-                {property?.images?.length === 0 || !property?.images ? (
+                {images?.length === 0 ? (
                   <MediaEmptyState />
                 ) : (
                   <Image
@@ -141,7 +150,7 @@ const DirectProfileProperty = () => {
             <div className="slider slider-mobile">
               {property && (
                 <>
-                  {property?.images?.length === 0 || !property?.images ? (
+                  {images?.length === 0 ? (
                     <></>
                   ) : (
                     <>
@@ -162,7 +171,7 @@ const DirectProfileProperty = () => {
             <div className="slider slider-pc slider_web_images">
               {property && (
                 <>
-                  {property?.images?.length === 0 || !property?.images ? (
+                  {images?.length === 0 ? (
                     <></>
                   ) : (
                     <ImagesCustomSwiper
