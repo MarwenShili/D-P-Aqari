@@ -22,6 +22,7 @@ import { copyToClipboard } from "../../helpers/CopyToClipboard";
 import { FileType } from "../../helpers/filterImages";
 import VideoComponent from "./components/VideoDemo/VideoDemo";
 import MediaEmptyState from "../../components/MediaEmptyState/MediaEmptyState";
+import { openLinkInNewWindow } from "../../helpers/openMediaLink";
 
 const DirectProfileProperty = () => {
   const dispatch = useDispatch();
@@ -49,21 +50,21 @@ const DirectProfileProperty = () => {
 
   useEffect(() => {
     setProperty(data?.property);
-    if (data?.property?.images) {
-      setImages(data?.property?.images);
-    }
-    if (data?.property?.videos) {
-      setVideos((prev) => [...prev, ...data?.property?.videos]);
-    }
-    if (data?.property?.url) {
-      setVideos((prevData) => [...prevData, ...data?.property.url]);
-    }
-    //condition related to : if no images and have videos
-    if (!data?.property?.images || data?.property?.images?.length === 0) {
-      if (data?.property?.videos) {
-        setPreviewImg(data?.property.videos[0]);
-      }
-    }
+    // if (data?.property?.images) {
+    //   setImages(data?.property?.images);
+    // }
+    // if (data?.property?.videos) {
+    //   setVideos((prev) => [...prev, ...data?.property?.videos]);
+    // }
+    // if (data?.property?.url) {
+    //   setVideos((prevData) => [...prevData, ...data?.property.url]);
+    // }
+    // //condition related to : if no images and have videos
+    // if (!data?.property?.images || data?.property?.images?.length === 0) {
+    //   if (data?.property?.videos) {
+    //     setPreviewImg(data?.property.videos[0]);
+    //   }
+    // }
 
     //condition related to : if no images and no vr tours and  have one videos
   }, [data]);
@@ -131,7 +132,14 @@ const DirectProfileProperty = () => {
           </div>
 
           <div className="right">
-            {FileType(previewImg) === "mp4" ? (
+            <Image
+              src={previewImg || property?.images?.[0]}
+              className="principal_img"
+              width="100%"
+              preview={false}
+              onClick={openLinkInNewWindow}
+            />
+            {/* {FileType(previewImg) === "mp4" ? (
               <VideoComponent videoLink={previewImg} type="preview" />
             ) : (
               <>
@@ -145,8 +153,8 @@ const DirectProfileProperty = () => {
                   ></Image>
                 )}
               </>
-            )}
-            <div className="slider slider-mobile">
+            )} */}
+            {/* <div className="slider slider-mobile">
               {property && (
                 <>
                   {images?.length === 0 ? (
@@ -166,8 +174,8 @@ const DirectProfileProperty = () => {
                   )}
                 </>
               )}
-            </div>
-            <div className="slider slider-pc slider_web_images">
+            </div> */}
+            {/* <div className="slider slider-pc slider_web_images">
               {property && (
                 <>
                   {images?.length === 0 ? (
@@ -180,8 +188,8 @@ const DirectProfileProperty = () => {
                   )}
                 </>
               )}
-            </div>
-            {videos.length > 0 && (
+            </div> */}
+            {/* {videos.length > 0 && (
               <div className="slider slider-pc slider_web_videos">
                 {property && (
                   <ImagesCustomSwiper
@@ -192,7 +200,7 @@ const DirectProfileProperty = () => {
                   />
                 )}
               </div>
-            )}
+            )} */}
 
             <div className="map">
               <Map property={property} />
