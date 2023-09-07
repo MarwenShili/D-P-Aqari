@@ -402,10 +402,10 @@
     "shared_elevator": "مصعد مشترك"
   },
   "furniture": {
-    "coffee_machine": "آلة قهوة",
-    "dishwasher": "غسالة صحون",
-    "iron": "مكواة",
-    "microwave_heating_food": "ميكروويف",
+    "coffee_machine": "آلة صناعة قهوة",
+    "dishwasher": "غسالة أطباق",
+    "iron": "مكواة ملابس",
+    "microwave_heating_food": "ميكرويف",
     "oven": "فرن",
     "refrigerator": "ثلاجة",
     "washing_machine": "غسالة ملابس"
