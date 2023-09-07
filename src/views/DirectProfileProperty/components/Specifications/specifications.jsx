@@ -65,7 +65,7 @@ function Specifications({ items, entrance }) {
         {items?.unit_width && (
           <Tag
             title={`${t("specification.width")} ${items?.unit_width} ${t(
-              "specification.m"
+              "specification.meter_square"
             )}`}
             background="1b1c57"
             icon={I3}
@@ -74,7 +74,7 @@ function Specifications({ items, entrance }) {
         {items?.unit_length && (
           <Tag
             title={`${t("specification.length")} ${items?.unit_length} ${t(
-              "specification.m"
+              "specification.meter_square"
             )}`}
             background="1b1c57"
             icon={I4}
@@ -129,29 +129,30 @@ function Specifications({ items, entrance }) {
           items?.unit_finishing && (
             <Tag
               // title={t("specification.shell_unfinished")}
-              title={items?.building_condition}
+              title={items?.unit_finishing}
               background="1b1c57"
               icon={I9}
             />
           )}
-        {items?.unit_finishing === "Finished" &&
-          items?.unit_finishing != "مكتمل" &&
-          items?.building_first_inhabited && (
-            <Tag
-              title={
-                items?.building_first_inhabited === "yes"
-                  ? t("specification.first_inhabitant")
-                  : t("specification.reconditioned")
-              }
-              background="1b1c57"
-              icon={I9}
-            />
-          )}
-        {items?.furnished_type &&
-          items?.furnished_type != "Unfurnished" &&
-          items?.furnished_type != "غير مؤثث" && (
-            <Tag title={items?.furnished_type} background="1b1c57" icon={I7} />
-          )}
+        {/* {items?.unit_finishing === "Finished" &&
+          items?.unit_finishing != "مكتمل" && */}
+        {items?.building_condition && (
+          <Tag
+            title={
+              // items?.building_first_inhabited === "yes"
+              //   ? t("specification.first_inhabitant")
+              //   : t("specification.reconditioned")
+              items?.building_condition
+            }
+            background="1b1c57"
+            icon={I9}
+          />
+        )}
+        {/* items?.furnished_type != "Unfurnished" &&
+          items?.furnished_type != "غير مؤثث" && ( )*/}
+        {items?.furnished_type && (
+          <Tag title={items?.furnished_type} background="1b1c57" icon={I7} />
+        )}
         {items?.sea_view === "yes" && (
           <Tag
             title={t("specification.sea_view")}
