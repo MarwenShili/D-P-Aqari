@@ -299,9 +299,10 @@
         height: 390px;
         margin-bottom: 20px;
         border-radius: 12px;
-
-        @media only screen and (max-width: 900px) {
-          display: none;
+        cursor: pointer;
+        @media only screen and (max-width: 600px) {
+          // display: none;
+          height: 250px;
         }
         img {
           width: 100% !important;

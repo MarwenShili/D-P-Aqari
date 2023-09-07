@@ -50,6 +50,7 @@ const DirectProfileProperty = () => {
 
   useEffect(() => {
     setProperty(data?.property);
+    setPreviewImg(data?.property?.main_image);
     // if (data?.property?.images) {
     //   setImages(data?.property?.images);
     // }
