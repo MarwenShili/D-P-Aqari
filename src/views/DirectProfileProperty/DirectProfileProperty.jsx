@@ -23,6 +23,7 @@ import { FileType } from "../../helpers/filterImages";
 import VideoComponent from "./components/VideoDemo/VideoDemo";
 import MediaEmptyState from "../../components/MediaEmptyState/MediaEmptyState";
 import { openLinkInNewWindow } from "../../helpers/openMediaLink";
+import handleName from "../../helpers/handleName";
 
 const DirectProfileProperty = () => {
   const dispatch = useDispatch();
@@ -32,8 +33,9 @@ const DirectProfileProperty = () => {
   const [previewImg, setPreviewImg] = useState();
   const [images, setImages] = useState([]);
   const [videos, setVideos] = useState([]);
-  console.log(videos);
   const [property, setProperty] = useState();
+  console.log(property);
+
   const data = useSelector((state) => state.property);
   const { ref_no } = useParams();
 
@@ -95,13 +97,18 @@ const DirectProfileProperty = () => {
             <p className="title">{property?.name}</p>
             <span className="position">
               <img src={posIcon} alt="" />
-              {property?.country +
+              {/* {property?.country +
                 ", " +
                 property?.state +
                 ", " +
                 property?.city +
                 ", " +
-                property?.area}
+                property?.area} */}
+              {handleName(
+                property?.address_ar,
+                property?.address_en,
+                currentLanguageCode
+              )}
             </span>
             <p className="description">{property?.details}</p>
             {width > 900 ? (

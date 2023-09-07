@@ -45,42 +45,6 @@ function Facilities({ items }) {
             color="#626687"
           />
         )}
-        {+items?.wood_stove > 0 && (
-          <Tag
-            title={t("facilities.Wood_Stove")}
-            background="var(--light-green, #EAF4EE)"
-            value={items?.wood_stove}
-            colorValue="#04C23A"
-            color="#626687"
-          />
-        )}
-        {+items?.ornamental_trees > 0 && (
-          <Tag
-            title={t("facilities.Ornamental_Trees")}
-            background="var(--light-green, #EAF4EE)"
-            value={items?.ornamental_trees}
-            colorValue="#04C23A"
-            color="#626687"
-          />
-        )}
-        {+items?.palm > 0 && (
-          <Tag
-            title={t("facilities.Palm")}
-            background="var(--light-green, #EAF4EE)"
-            value={items?.palm}
-            colorValue="#04C23A"
-            color="#626687"
-          />
-        )}
-        {+items?.fruitful_trees > 0 && (
-          <Tag
-            title={t("facilities.Fruitful_Trees")}
-            background="var(--light-green, #EAF4EE)"
-            value={items?.fruitful_trees}
-            colorValue="#04C23A"
-            color="#626687"
-          />
-        )}
         {items?.is_kitchen_installed === "yes" && (
           <Tag
             title={t(`facilities.installed_kitchen`)}
@@ -88,7 +52,6 @@ function Facilities({ items }) {
             color="#626687"
           />
         )}
-
         {items?.is_clothing_cabinet_installed === "yes" && (
           <Tag
             title={t(`facilities.installed_cabinet`)}
@@ -103,10 +66,47 @@ function Facilities({ items }) {
             color="#626687"
           />
         )}
+
         {items?.shared_elevator === "yes" && (
           <Tag
             title={t(`facilities.shared_elevator`)}
             background="var(--light-green, #EAF4EE)"
+            color="#626687"
+          />
+        )}
+        {+items?.wood_stove > 0 && (
+          <Tag
+            title={t("facilities.Wood_Stove")}
+            background="var(--light-green, #EAF4EE)"
+            value={items?.wood_stove}
+            colorValue="#04C23A"
+            color="#626687"
+          />
+        )}
+        {+items?.palm > 0 && (
+          <Tag
+            title={t("facilities.Palm")}
+            background="var(--light-green, #EAF4EE)"
+            value={items?.palm}
+            colorValue="#04C23A"
+            color="#626687"
+          />
+        )}
+        {+items?.ornamental_trees > 0 && (
+          <Tag
+            title={t("facilities.Ornamental_Trees")}
+            background="var(--light-green, #EAF4EE)"
+            value={items?.ornamental_trees}
+            colorValue="#04C23A"
+            color="#626687"
+          />
+        )}
+        {+items?.fruitful_trees > 0 && (
+          <Tag
+            title={t("facilities.Fruitful_Trees")}
+            background="var(--light-green, #EAF4EE)"
+            value={items?.fruitful_trees}
+            colorValue="#04C23A"
             color="#626687"
           />
         )}

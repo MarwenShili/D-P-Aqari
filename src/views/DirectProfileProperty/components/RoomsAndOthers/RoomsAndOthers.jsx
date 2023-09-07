@@ -25,7 +25,7 @@ function RoomsAndOthers({ items }) {
 
         {/* {+items?.number_of_rooms > 0 && (
           <Tag
-            title={` total rooms`}
+            title={t(`rooms.number_of_rooms`)}
             background="#DBEAFE"
             color="#626687"
             value={items?.number_of_rooms}
@@ -33,164 +33,191 @@ function RoomsAndOthers({ items }) {
         )}
         {+items?.bathrooms > 0 && (
           <Tag
-            title={`${items?.bathrooms} bath rooms`}
+            title={t(`rooms.bathrooms`)}
             background="#DBEAFE"
             color="#626687"
-            value={items?.number_of_rooms}
+            value={items?.bathrooms}
           />
         )}
         {+items?.open_kitchen > 0 && (
           <Tag
-            title={`${items?.open_kitchen} open kitchen`}
+            title={t(`rooms.open_kitchen`)}
             background="#DBEAFE"
             color="#626687"
-          />
-        )}
-        {+items?.saperate_kitchen > 0 && (
-          <Tag
-            title={`${items?.saperate_kitchen} separate kitchen`}
-            background="#DBEAFE"
-            color="#626687"
-          />
-        )}
-        {+items?.grass_area > 0 && (
-          <Tag
-            title={`${items?.grass_area}M Grass area`}
-            background="#DBEAFE"
-            color="#626687"
-          />
-        )}
-        {+items?.bathrooms_full > 0 && (
-          <Tag
-            title={`${items?.bathrooms_full} Bathrooms`}
-            background="#DBEAFE"
-            color="#626687"
-          />
-        )}
-        {+items?.halls > 0 && (
-          <Tag
-            title={`${items?.halls} Halls`}
-            background="#DBEAFE"
-            color="#626687"
-          />
-        )}
-        {+items?.kitchen > 0 && (
-          <Tag
-            title={`${items?.kitchen} open kitchen`}
-            background="#DBEAFE"
-            color="#626687"
-          />
-        )}
-        {+items?.bedrooms > 0 && (
-          <Tag
-            title={`${items?.bedrooms} bedrooms`}
-            background="#DBEAFE"
-            color="#626687"
-          />
-        )}
-        {+items?.majles > 0 && (
-          <Tag
-            title={`${items?.majles} Majles`}
-            background="#DBEAFE"
-            color="#626687"
-          />
-        )}
-        {+items?.extension > 0 && (
-          <Tag
-            title={`${items?.extension} extension`}
-            background="#DBEAFE"
-            color="#626687"
-          />
-        )}
-        {+items?.driver_room > 0 && (
-          <Tag
-            title={`${items?.driver_room} Driver’s room`}
-            background="#DBEAFE"
-            color="#626687"
-          />
-        )}
-        {+items?.maid_room > 0 && (
-          <Tag
-            title={`${items?.maid_room} maid’s room`}
-            background="#DBEAFE"
-            color="#626687"
-          />
-        )}
-        {+items?.outdoor_patio > 0 && (
-          <Tag
-            title={`${items?.outdoor_patio} outdoor patio`}
-            background="#DBEAFE"
-            color="#626687"
-          />
-        )}
-        {+items?.swimming_pool > 0 && (
-          <Tag
-            title={`${items?.swimming_pool} swimming pool`}
-            background="#DBEAFE"
-            color="#626687"
-          />
-        )}
-        {+items?.car_park > 0 && (
-          <Tag
-            title={`${items?.car_park} outdoor car park`}
-            background="#DBEAFE"
-            color="#626687"
-          />
-        )}
-        {+items?.football_stadium > 0 && (
-          <Tag
-            title={`${items?.football_stadium} football staduim`}
-            background="#DBEAFE"
-            color="#626687"
-          />
-        )}
-        {+items?.fixed_caravan > 0 && (
-          <Tag
-            title={`${items?.fixed_caravan} caravan`}
-            background="#DBEAFE"
-            color="#626687"
-          />
-        )}
-        {+items?.tent > 0 && (
-          <Tag
-            title={`${items?.tent} tents`}
-            background="#DBEAFE"
-            color="#626687"
+            value={items?.open_kitchen}
           />
         )}
         {+items?.storeroom > 0 && (
           <Tag
-            title={`${items?.storeroom} storeroom`}
+            title={t(`rooms.storeroom`)}
             background="#DBEAFE"
             color="#626687"
+            value={items?.storeroom}
           />
         )}
-        {+items?.roof_apartment > 0 && (
+        {+items?.extension > 0 && (
           <Tag
-            title={`${items?.roof_apartment} roof apartment`}
+            title={t(`rooms.extension`)}
             background="#DBEAFE"
             color="#626687"
+            value={items?.extension}
+          />
+        )}
+        {+items?.maid_room > 0 && (
+          <Tag
+            title={t(`rooms.maid_room`)}
+            background="#DBEAFE"
+            color="#626687"
+            value={items?.maid_room}
           />
         )}
         {+items?.frontyard > 0 && (
           <Tag
-            title={`${items?.frontyard} front yard`}
+            title={t(`rooms.frontyard`)}
             background="#DBEAFE"
             color="#626687"
+            value={items?.frontyard}
           />
         )}
         {+items?.sideyard > 0 && (
           <Tag
-            title={`${items?.sideyard} M  side yard`}
+            title={t(`rooms.sideyard`)}
             background="#DBEAFE"
             color="#626687"
+            value={items?.sideyard}
           />
         )}
-        {+items?.backyard > 0 && (
+        {+items?.car_park > 0 && (
           <Tag
-            title={`${items?.backyard} M  back yard`}
+            title={t(`rooms.car_park`)}
             background="#DBEAFE"
             color="#626687"
+            value={items?.car_park}
+          />
+        )}
+        {+items?.saperate_kitchen > 0 && (
+          <Tag
+            title={t(`rooms.saperate_kitchen`)}
+            background="#DBEAFE"
+            color="#626687"
+            value={items?.saperate_kitchen}
+          />
+        )}
+        {+items?.grass_area > 0 && (
+          <Tag
+            title={t(`rooms.grass_area`)}
+            background="#DBEAFE"
+            color="#626687"
+            value={items?.saperate_kitchen}
+          />
+        )}
+        {+items?.bathrooms_full > 0 && (
+          <Tag
+            title={t(`rooms.bathrooms_full`)}
+            background="#DBEAFE"
+            color="#626687"
+            value={items?.bathrooms_full}
+          />
+        )}
+        {+items?.halls > 0 && (
+          <Tag
+            title={t(`rooms.halls`)}
+            background="#DBEAFE"
+            color="#626687"
+            value={items?.halls}
+          />
+        )}
+        {+items?.kitchen > 0 && (
+          <Tag
+            title={t(`rooms.kitchen`)}
+            background="#DBEAFE"
+            color="#626687"
+            value={items?.kitchen}
+          />
+        )}
+        {+items?.bedrooms > 0 && (
+          <Tag
+            title={t(`rooms.bedrooms`)}
+            background="#DBEAFE"
+            color="#626687"
+            value={items?.bedrooms}
+          />
+        )}
+        {+items?.majles > 0 && (
+          <Tag
+            title={t(`rooms.majles`)}
+            background="#DBEAFE"
+            color="#626687"
+            value={items?.majles}
+          />
+        )}
+
+        {+items?.driver_room > 0 && (
+          <Tag
+            title={t(`rooms.driver_room`)}
+            background="#DBEAFE"
+            color="#626687"
+            value={items?.driver_room}
+          />
+        )}
+
+        {+items?.outdoor_patio > 0 && (
+          <Tag
+            title={t(`rooms.outdoor_patio`)}
+            background="#DBEAFE"
+            color="#626687"
+            value={items?.outdoor_patio}
+          />
+        )}
+        {+items?.swimming_pool > 0 && (
+          <Tag
+            title={t(`rooms.swimming_pool`)}
+            background="#DBEAFE"
+            color="#626687"
+            value={items?.swimming_pool}
+          />
+        )}
+
+        {+items?.football_stadium > 0 && (
+          <Tag
+            title={t(`rooms.football_stadium`)}
+            background="#DBEAFE"
+            color="#626687"
+            value={items?.football_stadium}
+          />
+        )}
+        {+items?.fixed_caravan > 0 && (
+          <Tag
+            title={t(`rooms.fixed_caravan`)}
+            background="#DBEAFE"
+            color="#626687"
+            value={items?.fixed_caravan}
+          />
+        )}
+        {+items?.tent > 0 && (
+          <Tag
+            title={t(`rooms.tent`)}
+            background="#DBEAFE"
+            color="#626687"
+            value={items?.tent}
+          />
+        )}
+
+        {+items?.roof_apartment > 0 && (
+          <Tag
+            title={t(`rooms.roof_apartment`)}
+            background="#DBEAFE"
+            color="#626687"
+            value={items?.roof_apartment}
+          />
+        )}
+
+        {+items?.backyard > 0 && (
+          <Tag
+            title={t(`rooms.backyard`)}
+            background="#DBEAFE"
+            color="#626687"
+            value={items?.backyard}
           />
         )} */}
       </div>

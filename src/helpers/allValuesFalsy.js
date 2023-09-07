@@ -1,4 +1,7 @@
 function allValuesFalsy(obj) {
+  if (Object.keys(obj).length === 0) {
+    return true; // Object is empty, return true
+  }
   for (const key in obj) {
     if (
       obj.hasOwnProperty(key) &&
@@ -8,9 +11,9 @@ function allValuesFalsy(obj) {
         obj[key] === "no" ||
         obj[key] === false)
     ) {
-      return false;
+      return true;
     }
   }
-  return true;
+  return false;
 }
 export { allValuesFalsy };
