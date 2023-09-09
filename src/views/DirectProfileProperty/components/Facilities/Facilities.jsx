@@ -1,9 +1,16 @@
 import "./_Facilities.scss";
 import Tag from "../Tag/Tag";
 import { useTranslation } from "react-i18next";
+import { allValuesFalsy } from "../../../../helpers/allValuesFalsy";
 
 function Facilities({ items }) {
   const { t } = useTranslation();
+  console.log(items);
+  // console.log("Facilities", allValuesFalsy(items));
+
+  if (allValuesFalsy(items)) {
+    return null;
+  }
 
   return (
     <div className="specifications">

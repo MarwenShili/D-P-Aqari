@@ -2,9 +2,14 @@ import "./_RoomsAndOthers.scss";
 import Tag from "../Tag/Tag";
 import floor from "../../assets/icons/floor.svg";
 import { useTranslation } from "react-i18next";
+import { allValuesFalsy } from "../../../../helpers/allValuesFalsy";
 
 function RoomsAndOthers({ items }) {
   const { t } = useTranslation();
+  // console.log(allValuesFalsy(items));
+  if (allValuesFalsy(items)) {
+    return null;
+  }
 
   return (
     <div className="specifications">

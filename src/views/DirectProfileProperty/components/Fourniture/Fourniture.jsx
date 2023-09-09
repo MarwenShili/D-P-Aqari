@@ -9,10 +9,11 @@ function Fourniture({ items }) {
   if (items?.length === 0) {
     return null;
   }
-
+  // console.log("Fourniture", allValuesFalsy(items));
   if (allValuesFalsy(items)) {
     return null;
   }
+
   return (
     <div className="specifications">
       <p className="title_s">{t("property_details.Fourniture")} :</p>

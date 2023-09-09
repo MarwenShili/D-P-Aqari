@@ -7,6 +7,7 @@ import RoomsAndOthers from "../RoomsAndOthers/RoomsAndOthers";
 import Services from "../Services/Services";
 import Facilities from "../Facilities/Facilities";
 import Fourniture from "../Fourniture/Fourniture";
+import { allValuesFalsy } from "../../../../helpers/allValuesFalsy";
 
 function MobileTab({ property }) {
   const { t } = useTranslation();
@@ -19,23 +20,35 @@ function MobileTab({ property }) {
     },
     {
       key: "2",
-      label: t("properties.Rooms_and_others"),
+      label: allValuesFalsy(property?.rooms_array)
+        ? false
+        : t("properties.Rooms_and_others"),
       children: <RoomsAndOthers items={property?.rooms_array} />,
+      disabled: allValuesFalsy(property?.rooms_array),
     },
     {
       key: "3",
-      label: t("properties.Services"),
+      label: allValuesFalsy(property?.services_array)
+        ? false
+        : t("properties.Services"),
       children: <Services items={property?.services_array} />,
+      disabled: allValuesFalsy(property?.services_array),
     },
     {
       key: "4",
-      label: t("properties.Facilities"),
+      label: allValuesFalsy(property?.specification_facilities_array)
+        ? false
+        : t("properties.Facilities"),
       children: <Facilities items={property?.specification_facilities_array} />,
+      disabled: allValuesFalsy(property?.specification_facilities_array),
     },
     {
       key: "5",
-      label: t("properties.Fourniture"),
+      label: allValuesFalsy(property?.furniture_array)
+        ? false
+        : t("properties.Fourniture"),
       children: <Fourniture items={property?.furniture_array} />,
+      disabled: allValuesFalsy(property?.furniture_array),
     },
   ];
   return (

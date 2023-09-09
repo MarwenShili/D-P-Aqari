@@ -1,6 +1,7 @@
 import "./_Services.scss";
 import Tag from "../Tag/Tag";
 import { useTranslation } from "react-i18next";
+import { allValuesFalsy } from "../../../../helpers/allValuesFalsy";
 
 function Services({ items }) {
   const { t } = useTranslation();
@@ -11,6 +12,10 @@ function Services({ items }) {
     }
   };
 
+  // console.log("Services", allValuesFalsy(items));
+  if (allValuesFalsy(items)) {
+    return null;
+  }
   return (
     <div className="specifications">
       <p className="title_s">{t("property_details.Services")} :</p>
