@@ -8,7 +8,7 @@ function Logo() {
   const currentLanguageCode = cookies.get("i18next") || "en";
 
   return (
-    <NavLink style={{ cursor: "pointer" }} to="/">
+    <NavLink style={{ cursor: "pointer" }}>
       <img
         className="img_logo"
         src={currentLanguageCode === "en" ? englishLogo : arabicLogo}
