@@ -5,8 +5,8 @@ export const headers = {
   "x-api-key": 1234,
 };
 const axiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
-  // baseURL: process.env.REACT_APP_API_URL_DEV,
+  // baseURL: process.env.REACT_APP_API_URL,
+  baseURL: process.env.REACT_APP_API_URL_DEV,
   headers,
 });
 

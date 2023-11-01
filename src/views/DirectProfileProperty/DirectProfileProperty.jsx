@@ -145,7 +145,7 @@ const DirectProfileProperty = () => {
               className="principal_img"
               width="100%"
               preview={false}
-              onClick={openLinkInNewWindow}
+              onClick={() => openLinkInNewWindow(property?.ref_id)}
             />
             {/* {FileType(previewImg) === "mp4" ? (
               <VideoComponent videoLink={previewImg} type="preview" />
